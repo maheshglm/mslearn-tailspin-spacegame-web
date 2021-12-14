@@ -14,10 +14,8 @@ pool:
 variables:
   wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
   dotnetSdkVersion: '5.x'
-  buildTemplatePath: templates/build.yaml
 
 steps:
-
 - task: UseDotNet@2
   displayName: 'Use .NET SDK $(dotnetSdkVersion)'
   inputs:
@@ -45,11 +43,11 @@ steps:
     command: 'restore'
     projects: '**/*.csproj'
 
-- template: "$(buildTemplatePath)"
+- template: templates/build.yaml
   parameters:
     buildConfiguration: 'Debug'
 
-- template: "$(buildTemplatePath)"
+- template: templates/build.yaml
   parameters:
     buildConfiguration: 'Release'
 
