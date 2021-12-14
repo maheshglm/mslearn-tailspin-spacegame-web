@@ -45,11 +45,11 @@ steps:
     command: 'restore'
     projects: '**/*.csproj'
 
-- template: '$(buildTemplatePath)'
+- template: "$(buildTemplatePath)"
   parameters:
     buildConfiguration: 'Debug'
 
-- template: '$(buildTemplatePath)'
+- template: "$(buildTemplatePath)"
   parameters:
     buildConfiguration: 'Release'
 
